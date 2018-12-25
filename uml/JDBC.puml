@@ -1,0 +1,11 @@
+@startuml
+user -> "java.sql.DriverManager": DriverManager.getDriver(jdbcUrl): 触发类加载
+"java.sql.DriverManager" -> "java.sql.DriverManager": 静态代码块执行loadInitialDrivers方法
+"java.sql.DriverManager" -> java.util.ServiceLoader: ServiceLoader.load(Driver.class)
+java.util.ServiceLoader -> java.util.ServiceLoader: 使用currentThread的contextClassLoader进行类加载
+
+"java.util.ServiceLoader" -> "com.mysql.jdbc.Driver":触发类加载
+"com.mysql.jdbc.Driver" -> "com.mysql.jdbc.Driver": 静态代码块执行注册：\nDriverManager.registerDriver(new Driver())
+"com.mysql.jdbc.Driver" --> "java.sql.DriverManager": 注册到 registeredDrivers
+"java.sql.DriverManager" --> user: 从注册的registeredDrivers中返回合适的driver
+@enduml

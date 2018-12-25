@@ -1,0 +1,19 @@
+@startuml
+actor browser
+== asynchronous charge ==
+browser -> G_Shield: charge
+G_Shield --> browser: 302 to checkout
+browser -> G_Shield: select channel to charge
+G_Shield -> grabPay: charge
+grabPay -> grabPay: 302 to checkout
+grabPay -> browser: charge result
+grabPay -> G_Shield: charge result
+G_Shield --> grabPay: confirm receive
+
+== refund ==
+browser -> G_Shield: withdrawal
+G_Shield -> grabPay: refund
+grabPay --> G_Shield: refund result
+G_Shield --> browser: withdrawal result
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+actor browser
+== charge ==
+browser -> G_Shield: insure
+G_Shield --> browser: 302 to checkout
+browser -> G_Shield: select channel to charge
+G_Shield -> grabPay: charge
+grabPay --> G_Shield: charge result
+G_Shield --> G_Shield: underwriting
+G_Shield --> browser: insure result
+
+== refund ==
+browser -> G_Shield: withdrawal
+G_Shield -> grabPay: refund
+grabPay --> G_Shield: refund result
+G_Shield --> browser: withdrawal result
+
+@enduml

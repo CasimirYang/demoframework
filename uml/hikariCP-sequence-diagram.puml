@@ -1,0 +1,38 @@
+@startuml
+skinparam backgroundColor #EEEBDC
+
+title HikariCP DataSource init Sequence
+box "hikariCP"
+note left of HikariDataSource:new HikariDataSource(config);
+activate HikariDataSource
+HikariDataSource -> HikariDataSource: 校验config的参数
+HikariDataSource -> HikariDataSource: 属性设置
+HikariDataSource->pool.HikariPool: new pool.HikariPool
+pool.HikariPool->pool.PoolBase: invodke super(config)
+activate pool.PoolBase
+pool.PoolBase->pool.PoolBase: initializeDataSource:
+note right of pool.PoolBase:  1.属性设置 \n 2.根据dsClassName,jdbcUrl,JNDI的顺序获取DataSource\n 3.set LoginTimeout \n 4.set netTimeoutExecutor
+note right of pool.PoolBase: 根据设置的DataSourceClassName,jdbcUrl,DataSourceJNDI的顺序进行加载
+pool.PoolBase->util.DriverDataSource: 使用jdbcUrl方式: \n new DriverDataSource(jdbcUrl, driverClassName, dataSourceProperties, username, password)
+pool.HikariPool->pool.HikariPool: registerMBeans
+end box
+
+util.DriverDataSource->"java.sql.DriverManager" : driver = DriverManager.getDriver(jdbcUrl)
+
+activate "java.sql.DriverManager"
+"java.sql.DriverManager" -> "java.sql.DriverManager": 触发类加载
+"java.sql.DriverManager" -> "java.sql.DriverManager": 静态代码块执行loadInitialDrivers方法
+"java.sql.DriverManager" -> java.util.ServiceLoader: ServiceLoader.load(Driver.class)
+java.util.ServiceLoader -> java.util.ServiceLoader: 使用currentThread的contextClassLoader进行类加载
+
+"java.util.ServiceLoader" -> "com.mysql.jdbc.Driver":触发类加载
+"com.mysql.jdbc.Driver" -> "com.mysql.jdbc.Driver": 静态代码块执行注册：\nDriverManager.registerDriver(new Driver())
+"com.mysql.jdbc.Driver" --> "java.sql.DriverManager": 注册到 registeredDrivers
+"java.sql.DriverManager" --> util.DriverDataSource: 从注册的registeredDrivers中返回合适的driver
+util.DriverDataSource --> pool.PoolBase: set dadaSource field
+deactivate "java.sql.DriverManager"
+
+deactivate pool.PoolBase
+HikariDataSource -> HikariDataSource: 标记seal= true
+deactivate HikariDataSource
+@enduml
