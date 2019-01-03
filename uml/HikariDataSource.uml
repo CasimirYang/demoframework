@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.zaxxer.hikari.HikariDataSource</OriginalElement>
+  <nodes>
+    <node x="433.1936434659091" y="249.0">com.zaxxer.hikari.util.DriverDataSource</node>
+    <node x="481.74364346590914" y="79.0">java.sql.Wrapper</node>
+    <node x="571.25" y="329.0">com.zaxxer.hikari.pool.PoolBase</node>
+    <node x="263.464172979798" y="529.0">com.zaxxer.hikari.HikariConfigMXBean</node>
+    <node x="136.63114346590908" y="329.0">java.lang.AutoCloseable</node>
+    <node x="524.0943734217173" y="409.0">com.zaxxer.hikari.pool.PoolEntry</node>
+    <node x="384.25" y="329.0">com.zaxxer.hikari.util.ConcurrentBag.IConcurrentBagEntry</node>
+    <node x="468.4225063131313" y="629.0">com.zaxxer.hikari.HikariDataSource</node>
+    <node x="0.0" y="409.0">java.io.Closeable</node>
+    <node x="599.7436434659091" y="79.0">javax.sql.CommonDataSource</node>
+    <node x="595.0124999999999" y="159.0">javax.sql.DataSource</node>
+    <node x="299.8591461489899" y="409.0">com.zaxxer.hikari.util.ConcurrentBag</node>
+    <node x="524.5891729797979" y="529.0">com.zaxxer.hikari.pool.HikariPool</node>
+    <node x="123.0" y="409.0">com.zaxxer.hikari.HikariPoolMXBean</node>
+  </nodes>
+  <notes>
+    <note x="601.1936434659091" y="249.5">
+      <node>com.zaxxer.hikari.pool.PoolBase</node>
+      <value>124</value>
+      <edge>
+        <point x="-12.375" y="-15.0" />
+        <point x="608.375" y="304.0" />
+        <point x="620.1936434659091" y="304.0" />
+        <point x="0.0" y="14.5" />
+      </edge>
+    </note>
+    <note x="663.7436434659091" y="0.0">
+      <node>javax.sql.CommonDataSource</node>
+      <value>123</value>
+      <edge>
+        <point x="0.0" y="-15.0" />
+        <point x="0.0" y="14.5" />
+      </edge>
+    </note>
+  </notes>
+  <edges>
+    <edge source="com.zaxxer.hikari.HikariDataSource" target="com.zaxxer.hikari.HikariConfigMXBean">
+      <point x="-32.888888888888914" y="-15.0" />
+      <point x="509.5336174242424" y="589.0" />
+      <point x="305.464172979798" y="589.0" />
+      <point x="-42.0" y="15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.pool.HikariPool" target="com.zaxxer.hikari.pool.PoolBase">
+      <point x="29.181818181818187" y="-15.0" />
+      <point x="607.2709911616162" y="489.0" />
+      <point x="637.5943734217173" y="489.0" />
+      <point x="637.5943734217173" y="389.0" />
+      <point x="629.0" y="389.0" />
+      <point x="8.25" y="15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.pool.HikariPool" target="com.zaxxer.hikari.util.ConcurrentBag.IConcurrentBagEntry">
+      <point x="-19.45454545454544" y="-15.0" />
+      <point x="558.6346275252525" y="479.0" />
+      <point x="457.34999999999997" y="479.0" />
+      <point x="457.34999999999997" y="389.0" />
+      <point x="446.875" y="389.0" />
+      <point x="-20.875" y="15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.pool.HikariPool" target="com.zaxxer.hikari.HikariPoolMXBean">
+      <point x="-48.636363636363626" y="-15.0" />
+      <point x="529.4528093434343" y="509.0" />
+      <point x="239.25" y="509.0" />
+      <point x="38.75" y="15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.pool.HikariPool" target="com.zaxxer.hikari.pool.PoolEntry">
+      <point x="-9.727272727272748" y="-15.0" />
+      <point x="568.3619002525252" y="469.0" />
+      <point x="536.9693734217173" y="469.0" />
+      <point x="-38.625" y="15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.util.ConcurrentBag" target="java.lang.AutoCloseable">
+      <point x="-33.5" y="-15.0" />
+      <point x="333.3591461489899" y="389.0" />
+      <point x="234.88114346590908" y="389.0" />
+      <point x="32.75" y="15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.pool.PoolBase" target="com.zaxxer.hikari.pool.HikariPool">
+      <point x="24.75" y="15.0" />
+      <point x="645.5" y="389.0" />
+      <point x="653.9659090909091" y="389.0" />
+      <point x="653.9659090909091" y="499.0" />
+      <point x="616.9982638888889" y="499.0" />
+      <point x="38.909090909090935" y="-15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.pool.PoolEntry" target="com.zaxxer.hikari.pool.HikariPool">
+      <point x="12.875" y="15.0" />
+      <point x="9.727272727272748" y="-15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.pool.PoolBase" target="com.zaxxer.hikari.pool.PoolEntry">
+      <point x="-8.25" y="15.0" />
+      <point x="612.5" y="389.0" />
+      <point x="616.7943734217172" y="389.0" />
+      <point x="41.19999999999999" y="-15.0" />
+    </edge>
+    <edge source="javax.sql.DataSource" target="java.sql.Wrapper">
+      <point x="-28.5" y="-15.0" />
+      <point x="623.5124999999999" y="134.0" />
+      <point x="530.7436434659091" y="134.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.HikariDataSource" target="javax.sql.DataSource">
+      <point x="65.77777777777783" y="-15.0" />
+      <point x="608.2002840909091" y="609.0" />
+      <point x="702.6914457070707" y="609.0" />
+      <point x="702.6914457070707" y="229.0" />
+      <point x="697.6125" y="229.0" />
+      <point x="45.60000000000004" y="15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.util.DriverDataSource" target="javax.sql.DataSource">
+      <point x="0.0" y="-15.0" />
+      <point x="507.1936434659091" y="229.0" />
+      <point x="606.4124999999999" y="229.0" />
+      <point x="-45.60000000000002" y="15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.pool.PoolEntry" target="com.zaxxer.hikari.util.ConcurrentBag.IConcurrentBagEntry">
+      <point x="-41.19999999999999" y="-15.0" />
+      <point x="534.3943734217172" y="389.0" />
+      <point x="488.625" y="389.0" />
+      <point x="20.875" y="15.0" />
+    </edge>
+    <edge source="javax.sql.DataSource" target="javax.sql.CommonDataSource">
+      <point x="28.5" y="-15.0" />
+      <point x="680.5125" y="134.0" />
+      <point x="682.7436434659091" y="134.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.pool.PoolBase" target="javax.sql.DataSource">
+      <point x="37.125" y="-15.0" />
+      <point x="657.875" y="304.0" />
+      <point x="670.2539457070707" y="304.0" />
+      <point x="670.2539457070707" y="219.0" />
+      <point x="652.0124999999999" y="219.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.pool.PoolBase" target="com.zaxxer.hikari.util.DriverDataSource">
+      <point x="-37.125" y="-15.0" />
+      <point x="583.625" y="304.0" />
+      <point x="507.1936434659091" y="304.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.pool.HikariPool" target="com.zaxxer.hikari.util.ConcurrentBag">
+      <point x="-38.90909090909088" y="-15.0" />
+      <point x="539.180082070707" y="499.0" />
+      <point x="333.3591461489899" y="499.0" />
+      <point x="-33.5" y="15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.pool.PoolEntry" target="com.zaxxer.hikari.pool.PoolBase">
+      <point x="0.0" y="-15.0" />
+      <point x="575.5943734217173" y="389.0" />
+      <point x="579.5" y="389.0" />
+      <point x="-41.25" y="15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.util.ConcurrentBag" target="com.zaxxer.hikari.util.ConcurrentBag.IConcurrentBagEntry">
+      <point x="33.5" y="-15.0" />
+      <point x="400.3591461489899" y="389.0" />
+      <point x="405.125" y="389.0" />
+      <point x="-62.625" y="15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.HikariDataSource" target="java.io.Closeable">
+      <point x="-65.77777777777783" y="-15.0" />
+      <point x="476.64472853535347" y="609.0" />
+      <point x="51.5" y="609.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.HikariDataSource" target="com.zaxxer.hikari.HikariPoolMXBean">
+      <point x="-49.33333333333337" y="-15.0" />
+      <point x="493.0891729797979" y="599.0" />
+      <point x="161.75" y="599.0" />
+      <point x="-38.75" y="15.0" />
+    </edge>
+    <edge source="com.zaxxer.hikari.HikariDataSource" target="com.zaxxer.hikari.pool.HikariPool">
+      <point x="16.444444444444457" y="-15.0" />
+      <point x="558.8669507575758" y="579.0" />
+      <point x="578.0891729797979" y="579.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.io.Closeable" target="java.lang.AutoCloseable">
+      <point x="0.0" y="-15.0" />
+      <point x="51.5" y="389.0" />
+      <point x="169.38114346590908" y="389.0" />
+      <point x="-32.75" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.187515299877601" x="734.4106369820655" y="294.3045403999433" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

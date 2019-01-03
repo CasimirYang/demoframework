@@ -2,19 +2,27 @@
 skinparam backgroundColor #EEEBDC
 
 title HikariCP DataSource init Sequence
+
+
+
 box "hikariCP"
+participant HikariDataSource
+participant pool.HikariPool
+participant pool.PoolBase
+participant pool.PoolEntry
 note left of HikariDataSource:new HikariDataSource(config);
 activate HikariDataSource
 HikariDataSource -> HikariDataSource: 校验config的参数
 HikariDataSource -> HikariDataSource: 属性设置
+
 HikariDataSource->pool.HikariPool: new pool.HikariPool
+activate pool.HikariPool
 pool.HikariPool->pool.PoolBase: invodke super(config)
 activate pool.PoolBase
 pool.PoolBase->pool.PoolBase: initializeDataSource:
 note right of pool.PoolBase:  1.属性设置 \n 2.根据dsClassName,jdbcUrl,JNDI的顺序获取DataSource\n 3.set LoginTimeout \n 4.set netTimeoutExecutor
 note right of pool.PoolBase: 根据设置的DataSourceClassName,jdbcUrl,DataSourceJNDI的顺序进行加载
 pool.PoolBase->util.DriverDataSource: 使用jdbcUrl方式: \n new DriverDataSource(jdbcUrl, driverClassName, dataSourceProperties, username, password)
-pool.HikariPool->pool.HikariPool: registerMBeans
 end box
 
 util.DriverDataSource->"java.sql.DriverManager" : driver = DriverManager.getDriver(jdbcUrl)
@@ -31,8 +39,26 @@ java.util.ServiceLoader -> java.util.ServiceLoader: 使用currentThread的contex
 "java.sql.DriverManager" --> util.DriverDataSource: 从注册的registeredDrivers中返回合适的driver
 util.DriverDataSource --> pool.PoolBase: set dadaSource field
 deactivate "java.sql.DriverManager"
-
 deactivate pool.PoolBase
-HikariDataSource -> HikariDataSource: 标记seal= true
+
+pool.HikariPool--> pool.PoolBase: newPoolEntry
+pool.PoolBase-> pool.PoolBase: newConnection\n  1.dataSource.getConnection()\n  2.setupConnection \n  2.1设置validationTimeout，isReadOnly，isAutoCommit，transactionIsolation，schema\n  2.2 Execute isValid() or connection test query. 如果驱动支持JDBC4，HikariCP 强烈建议使用JDBC4做test \n  2.3 执行ConnectionInitSql 如果已经配置（默认没配置）
+pool.PoolBase-> pool.PoolEntry:new PoolEntry(connection,pool)
+pool.PoolEntry-->pool.HikariPool:poolEntry
+pool.HikariPool -> pool.HikariPool: poolEntry在lifetime后执行softEvictConnection
+pool.HikariPool--> pool.HikariPool: add to ConcurrentBag<PoolEntry>
+
+pool.HikariPool->pool.HikariPool: registerMBeans
+
+pool.HikariPool->pool.HikariPool: 初始化addConnectionExecutor给后续使用 \n 1.createPoolEntry \n 2.add to connectionBag
+pool.HikariPool->pool.HikariPool: 初始化closeConnectionExecutor给后续使用 \n 1.quietlyCloseConnection \n 2. fillPool
+
+pool.HikariPool->pool.HikariPool: 开启定时任务HouseKeeper维护最小空闲连接
+pool.HikariPool->pool.HikariPool: 初始化泄露检查工厂类 ProxyLeakTaskFactory
+pool.HikariPool->pool.HikariPool: 根据InitializationFailTimeout配置等待初始化
+
+deactivate pool.HikariPool
+
+HikariDataSource -> HikariDataSource: 标记seal= true 标记DS已经成功启动
 deactivate HikariDataSource
 @enduml
