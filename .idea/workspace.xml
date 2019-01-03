@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1413a96-6bc7-49c0-8080-7443a33b382e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uml/hikariCP-sequence-diagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/uml/hikariCP-sequence-diagram.puml" afterDir="false" />
-    </list>
+    <list default="true" id="f1413a96-6bc7-49c0-8080-7443a33b382e" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/shiro/target/" />
@@ -21,7 +17,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/uml/hikariCP-sequence-diagram.puml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
+            <state relative-caret-position="855">
               <caret line="45" column="61" lean-forward="true" selection-start-line="45" selection-start-column="61" selection-end-line="45" selection-end-column="61" />
             </state>
           </provider>
@@ -215,7 +211,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-11" />
     <option name="y" value="-11" />
     <option name="width" value="1943" />
@@ -256,7 +252,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546426816868" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../zatech-fusion-component" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/uml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -345,7 +341,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24009702" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -742,7 +737,7 @@
     <entry file="file://$PROJECT_DIR$/uml/HikariCP-leakDetect-diagram.puml" />
     <entry file="file://$PROJECT_DIR$/uml/hikariCP-sequence-diagram.puml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
+        <state relative-caret-position="855">
           <caret line="45" column="61" lean-forward="true" selection-start-line="45" selection-start-column="61" selection-end-line="45" selection-end-column="61" />
         </state>
       </provider>
