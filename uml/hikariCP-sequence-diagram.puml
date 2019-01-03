@@ -41,17 +41,17 @@ util.DriverDataSource --> pool.PoolBase: set dadaSource field
 deactivate "java.sql.DriverManager"
 deactivate pool.PoolBase
 
-pool.HikariPool--> pool.PoolBase: newPoolEntry
+pool.HikariPool--> pool.PoolBase: 根据InitializationFailTimeout需要是否new PoolEntry
 pool.PoolBase-> pool.PoolBase: newConnection\n  1.dataSource.getConnection()\n  2.setupConnection \n  2.1设置validationTimeout，isReadOnly，isAutoCommit，transactionIsolation，schema\n  2.2 Execute isValid() or connection test query. 如果驱动支持JDBC4，HikariCP 强烈建议使用JDBC4做test \n  2.3 执行ConnectionInitSql 如果已经配置（默认没配置）
 pool.PoolBase-> pool.PoolEntry:new PoolEntry(connection,pool)
 pool.PoolEntry-->pool.HikariPool:poolEntry
 pool.HikariPool -> pool.HikariPool: poolEntry在lifetime后执行softEvictConnection
-pool.HikariPool--> pool.HikariPool: add to ConcurrentBag<PoolEntry>
+
 
 pool.HikariPool->pool.HikariPool: registerMBeans
 
-pool.HikariPool->pool.HikariPool: 初始化addConnectionExecutor给后续使用 \n 1.createPoolEntry \n 2.add to connectionBag
-pool.HikariPool->pool.HikariPool: 初始化closeConnectionExecutor给后续使用 \n 1.quietlyCloseConnection \n 2. fillPool
+pool.HikariPool->pool.HikariPool: 初始化addConnectionExecutor给后续使用（用来 createPoolEntry & add to connectionBag）
+pool.HikariPool->pool.HikariPool: 初始化closeConnectionExecutor给后续使用（用来 quietlyCloseConnection & fillPool）
 
 pool.HikariPool->pool.HikariPool: 开启定时任务HouseKeeper维护最小空闲连接
 pool.HikariPool->pool.HikariPool: 初始化泄露检查工厂类 ProxyLeakTaskFactory
