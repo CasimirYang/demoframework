@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1413a96-6bc7-49c0-8080-7443a33b382e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/uml/hikariCP-connection-diagram.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uml/hikariCP-sequence-diagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/uml/hikariCP-sequence-diagram.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uml/hikariCP-sequence-diagram.svg" beforeDir="false" afterPath="$PROJECT_DIR$/uml/hikariCP-sequence-diagram.svg" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -18,11 +17,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uml/hikariCP-sequence-diagram.puml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="43" column="65" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
+            <state relative-caret-position="107">
+              <caret line="22" selection-start-line="22" selection-end-line="22" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/uml/hikariCP-connection-diagram.puml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -43,8 +51,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>DEFAULT_SESSION_ID_PARAMETER_NAME</find>
-      <find>COOKIE_HEADER_NAME</find>
       <find>sessionCookieName</find>
       <find>request</find>
       <find>resources</find>
@@ -73,6 +79,8 @@
       <find>pool.HikariPool</find>
       <find>HikariPool</find>
       <find>regis</find>
+      <find>HikariDataSource</find>
+      <find>poolEntry</find>
     </findStrings>
     <replaceStrings>
       <replace>G_Shield</replace>
@@ -124,6 +132,7 @@
         <option value="$PROJECT_DIR$/uml/sequence-diagram.puml" />
         <option value="$PROJECT_DIR$/uml/hikariCP-class-diagram.puml" />
         <option value="$PROJECT_DIR$/uml/hikariCP-sequence-diagram.puml" />
+        <option value="$PROJECT_DIR$/uml/hikariCP-connection-diagram.puml" />
       </list>
     </option>
   </component>
@@ -157,10 +166,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1720" />
-    <option name="y" value="-8" />
-    <option name="width" value="1296" />
-    <option name="height" value="696" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="1943" />
+    <option name="height" value="1043" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -196,7 +205,7 @@
     <property name="SearchEverywhereHistoryKey" value="RequiresAuthentication&#9;PSI&#9;JAVA://org.apache.shiro.authz.annotation.RequiresAuthentication&#10;User&#9;PSI&#9;JAVA://com.yjh.demo.shiro.dao.User&#10;ehcache.xml&#9;FILE&#9;jar://C:/Users/za-yangjinghua/.m2/repository/org/apache/shiro/shiro-ehcache/1.3.2/shiro-ehcache-1.3.2.jar!/org/apache/shiro/cache/ehcache/ehcache.xml&#10;EnterpriseCacheSessionDAO&#9;FILE&#9;jar://C:/Users/za-yangjinghua/.m2/repository/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/session/mgt/eis/EnterpriseCacheSessionDAO.class&#10;RedisSessionDAO&#9;PSI&#9;JAVA://org.crazycake.shiro.RedisSessionDAO&#10;EhCacheManager&#9;PSI&#9;JAVA://org.springframework.boot.autoconfigure.cache.EhCacheCacheConfiguration#ehCacheCacheManager&#10;DefaultWebSessionManager&#9;FILE&#9;jar://C:/Users/za-yangjinghua/.m2/repository/org/apache/shiro/shiro-web/1.4.0/shiro-web-1.4.0-sources.jar!/org/apache/shiro/web/session/mgt/DefaultWebSessionManager.java&#10;ServletContainerSessionManager&#9;FILE&#9;jar://C:/Users/za-yangjinghua/.m2/repository/org/apache/shiro/shiro-web/1.4.0/shiro-web-1.4.0-sources.jar!/org/apache/shiro/web/session/mgt/ServletContainerSessionManager.java&#10;SessionManager&#9;FILE&#9;jar://C:/Users/za-yangjinghua/.m2/repository/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0-sources.jar!/org/apache/shiro/session/mgt/DefaultSessionManager.java&#10;Cachemana&#9;PSI&#9;JAVA://org.apache.shiro.cache.CacheManager&#10;subjectDao&#9;FILE&#9;jar://C:/Users/za-yangjinghua/.m2/repository/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0-sources.jar!/org/apache/shiro/mgt/SubjectDAO.java&#10;SecurityUtils&#9;FILE&#9;jar://C:/Users/za-yangjinghua/.m2/repository/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0-sources.jar!/org/apache/shiro/SecurityUtils.java&#10;sessionDao&#9;PSI&#9;JAVA://org.apache.shiro.session.mgt.eis.SessionDAO&#10;SessionListener&#9;FILE&#9;jar://C:/Users/za-yangjinghua/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.12/tomcat-embed-core-9.0.12-sources.jar!/org/apache/catalina/SessionListener.java&#10;DefaultWebSecurityManager&#9;PSI&#9;JAVA://org.apache.shiro.web.mgt.DefaultWebSecurityManager&#10;ServletRequest&#9;FILE&#9;jar://C:/Users/za-yangjinghua/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.12/tomcat-embed-core-9.0.12-sources.jar!/javax/servlet/http/HttpServletRequest.java&#10;httpsess&#9;FILE&#9;jar://C:/Users/za-yangjinghua/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.12/tomcat-embed-core-9.0.12-sources.jar!/javax/servlet/http/HttpSession.java&#10;StandardSession&#9;FILE&#9;jar://C:/Users/za-yangjinghua/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.12/tomcat-embed-core-9.0.12-sources.jar!/org/apache/catalina/session/StandardSession.java&#10;requestFacade&#9;FILE&#9;jar://C:/Users/za-yangjinghua/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.12/tomcat-embed-core-9.0.12.jar!/org/apache/catalina/connector/RequestFacade.class&#10;websessionkey&#9;PSI&#9;JAVA://org.apache.shiro.web.session.mgt.WebSessionKey&#10;servletcontainersession&#9;FILE&#9;jar://C:/Users/za-yangjinghua/.m2/repository/org/apache/shiro/shiro-web/1.4.0/shiro-web-1.4.0-sources.jar!/org/apache/shiro/web/session/mgt/ServletContainerSessionManager.java&#10;ShiroHttpSession.java&#9;FILE&#9;jar://C:/Users/za-yangjinghua/.m2/repository/org/apache/shiro/shiro-web/1.4.0/shiro-web-1.4.0-sources.jar!/org/apache/shiro/web/servlet/ShiroHttpSession.java&#10;servletconta&#9;PSI&#9;JAVA://org.apache.shiro.web.session.mgt.ServletContainerSessionManager&#10;CookieRememberMeManager&#9;FILE&#9;jar://C:/Users/za-yangjinghua/.m2/repository/org/apache/shiro/shiro-web/1.4.0/shiro-web-1.4.0-sources.jar!/org/apache/shiro/web/mgt/CookieRememberMeManager.java&#10;SimpleCookie.java&#9;FILE&#9;jar://C:/Users/za-yangjinghua/.m2/repository/org/apache/shiro/shiro-web/1.4.0/shiro-web-1.4.0-sources.jar!/org/apache/shiro/web/servlet/SimpleCookie.java&#10;ShiroHttpSession&#9;FILE&#9;jar://C:/Users/za-yangjinghua/.m2/repository/org/apache/shiro/shiro-web/1.4.0/shiro-web-1.4.0-sources.jar!/org/apache/shiro/web/servlet/ShiroHttpSession.java&#10;SimpleCookie &#9;PSI&#9;JAVA://org.apache.shiro.web.servlet.SimpleCookie&#10;ShiroHttpServletResponse &#9;PSI&#9;JAVA://org.apache.shiro.web.servlet.ShiroHttpServletResponse&#10;AuthenticationToken&#9;PSI&#9;JAVA://org.apache.shiro.authc.AuthenticationToken" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546513390368" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546592393007" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/uml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -285,10 +294,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-118" width="1936" height="1176" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1609808" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24818109" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -311,7 +320,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32907662" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" x="-1920" y="-110" width="1920" height="1160" id="PlantUML" order="14" type="FLOATING" weight="0.3710575" />
+      <window_info active="true" anchor="bottom" x="-156" y="292" width="1376" height="534" id="PlantUML" order="14" visible="true" weight="0.5974026" />
       <window_info anchor="bottom" id="Ant Build" order="15" weight="0.48237476" />
       <window_info anchor="bottom" id="Statistic" order="16" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -419,13 +428,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.3.2/shiro-core-1.3.2.jar!/org/apache/shiro/session/mgt/eis/CachingSessionDAO.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.3.2/shiro-core-1.3.2.jar!/org/apache/shiro/cache/AbstractCacheManager.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -677,13 +679,6 @@
     <entry file="file://$PROJECT_DIR$/uml/hikariCP-sequence-diagram.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/uml/hikariCP-sequence-diagram.puml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="43" column="65" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uml/pay.puml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -728,6 +723,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/uml/HikariDataSource.uml">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uml/hikariCP-sequence-diagram.puml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="22" selection-start-line="22" selection-end-line="22" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uml/hikariCP-connection-diagram.puml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

@@ -1,0 +1,12 @@
+@startuml
+note left of HikariDataSource: hikariDataSource.getConnection(
+HikariDataSource -> pool.HikariPool: 获取顺序：\n 1.fastPathPool.getConnection() \n 2.pool.getConnection() \n 3.new HikariPool(this);pool.getConnection()
+pool.HikariPool-> hikari.util.ConcurrentBag: borrow poolEntry from ConcurrentBag<PoolEntry>
+hikari.util.ConcurrentBag --> pool.HikariPool: poolEntry
+pool.HikariPool -> pool.PoolEntry: 如果isMarkedEvicted || !isConnectionAlive(poolEntry.connection) -> closeConnection \n 否则通过 poolEntry.createProxyConnection(leakTaskFactory.schedule(poolEntry), now)创建连接代理
+note left of pool.ProxyFactory:通过Javassist修改
+pool.PoolEntry -> pool.ProxyFactory: ProxyFactory.getProxyConnection
+note left of pool.HikariProxyConnection:通过Javassist生成
+pool.ProxyFactory -> pool.HikariProxyConnection: new HikariProxyConnection
+pool.HikariProxyConnection -> pool.ProxyConnection: invoke by super construction
+@enduml
