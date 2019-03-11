@@ -18,6 +18,7 @@
 
     <modules>
         <module>shiro</module>
+        <module>mBean</module>
     </modules>
 
     <dependencies>

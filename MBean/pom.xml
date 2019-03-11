@@ -8,5 +8,12 @@
     <artifactId>MBean</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>mBean</name>
+
+    <parent>
+        <groupId>com.yjh.demo</groupId>
+        <artifactId>demo-framework</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     
 </project>

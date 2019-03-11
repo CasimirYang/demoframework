@@ -1,0 +1,12 @@
+@startuml
+market -> order: order
+order -> order: save info to DB
+order -> payment: 302 to checkout or silent pay
+
+payment --> order: payment result
+order -> policy: insure
+policy -> order: result
+
+sheduler-> order: order
+
+@enduml
